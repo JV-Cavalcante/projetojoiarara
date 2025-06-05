@@ -1,0 +1,91 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    background:  #fff;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    /* Estilização do formulário (tamanho máximo, fundo, bordas. */
+    background-color: #e2e6d3;
+    border-radius: 14px;
+    margin: 14px;
+    max-width: 600px;
+    width: 100%;
+    box-sizing: 0 3px 5px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+.header{
+    /* Título do formulário, parte de cima (NOVA CONTA)*/
+    background: linear-gradient(120deg, #ebf299 0%, #e2ebc5 100%);
+    padding: 24px;
+    text-align: center;
+    color: #121211;
+}
+
+.form{
+    /* Espaçamento interno do formulário */
+    padding: 18px;
+}
+
+.form-content{
+    /* Estilização dos elementos do formulário */ 
+    margin-bottom: 8px;
+    padding-bottom: 18px;
+    position: relative;
+}
+
+.form-content label{
+    /* */
+    display: inline-block;
+    margin-bottom: 4px;
+}
+
+.form-content input{
+    /* Estilização dos inputs, onde o usuário digita as informações */
+    display: block;
+    width: 100%;
+    border-radius: 8px;
+    padding: 8px;
+    border: 2px solid #989996;
+}
+
+.form-content a{
+    /* Estilização das mensagens de erro.*/
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    visibility: hidden; /* Só mostra a mensagem de erro, quando o erro de fato acontece, até lá fica em oculto.*/
+}
+
+.form button{
+    /* Estilização do botão (CADASTRAR)*/
+    background-color: #e8f05b;
+    color: #0a0a09;
+    width: 100%;
+    border-radius: 14px;
+    padding: 10px;
+    border: 0;
+    font-size: 16px;
+    cursor: pointer; /* Muda a forma do cursor do mouse ao passar por cima do botão.*/
+    margin-top: 14px;
+}
+    /* Estilização das classes de erros*/
+.form-content.error input{
+    border-color: #d12411;
+}
+
+.form-content.error a{
+    color: #d12411;
+    visibility: visible;
+} /* Fim da estilização de classes de erros*/

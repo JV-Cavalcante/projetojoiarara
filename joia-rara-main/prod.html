@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR"> <head>
+    <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Cadastro de Produtos</title> <link rel="stylesheet" href="./css/prod.css"> </head>
+<body>
+    <div class="container"> <h1>Cadastro de Produtos</h1> <div class="form-section"> <form id="productForm"> <div class="form-group"> <label for="nome">Nome:</label> <input type="text" id="nome" name="nome" required> </div>
+                <div class="form-group">
+                    <label for="descricao">Descrição:</label> <textarea id="descricao" name="descricao"></textarea> </div>
+                <div class="form-group">
+                    <label for="preco">Preço:</label> <input type="number" id="preco" name="preco"  required> </div>
+                <button type="submit" class="btn-cadastrar">Cadastrar</button> </form>
+        </div>
+
+        <h2>Lista de Produtos</h2> <div class="table-section"> <table id="productTable"> <thead> <tr> <th>ID</th> <th>Nome</th> <th>Descrição</th> <th>Preço</th> <th>Ações</th> </tr>
+                </thead>
+                <tbody> <tr>
+                        <td>1</td>
+                        <td>Sabonete</td>
+                        <td>Produto líquido</td>
+                        <td>20.00</td>
+                        <td>
+                            <button class="btn-acao btn-editar">Editar</button> <button class="btn-acao btn-excluir">Excluir</button> </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Shampoo</td>
+                        <td>Para cabelos secos</td>
+                        <td>35.50</td>
+                        <td>
+                            <button class="btn-acao btn-editar">Editar</button>
+                            <button class="btn-acao btn-excluir">Excluir</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        // Adiciona um 'listener' ao evento de 'submit' do formulário.
+        // Isso executa uma função quando o botão "Cadastrar" é clicado.
+        document.getElementById('productForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Impede o comportamento padrão do formulário de recarregar a página
+
+            // Obtém os valores digitados nos campos do formulário
+            const nome = document.getElementById('nome').value;
+            const descricao = document.getElementById('descricao').value;
+            const preco = parseFloat(document.getElementById('preco').value).toFixed(2); // Converte para número e formata com 2 casas decimais
+
+            // Quando tiver o back-end, irá contar a partir do Id do banco de dados
+            const newId = document.getElementById('productTable').rows.length; // Conta o número de linhas existentes na tabela
+
+            // Seleciona o corpo da tabela onde as novas linhas serão adicionadas
+            const tableBody = document.querySelector('#productTable tbody');
+            const newRow = tableBody.insertRow(); // Insere uma nova linha na tabela
+
+            // Define o conteúdo HTML da nova linha, preenchendo com os dados do formulário
+            newRow.innerHTML = `
+                <td>${newId}</td>
+                <td>${nome}</td>
+                <td>${descricao}</td>
+                <td>${preco}</td>
+                <td>
+                    <button class="btn-acao btn-editar">Editar</button>
+                    <button class="btn-acao btn-excluir">Excluir</button>
+                </td>
+            `;
+
+            // Limpa os campos do formulário após a adição do produto
+            document.getElementById('productForm').reset();
+        });
+
+        // Adiciona um 'listener' para cliques na tabela, para lidar com os botões de ação.
+        // Usa delegação de eventos para capturar cliques em botões dentro da tabela.
+        document.getElementById('productTable').addEventListener('click', function(event) {
+            // Verifica se o elemento clicado tem a classe 'excluir'
+            if (event.target.classList.contains('btn-excluir')) {
+                // Pede confirmação antes de excluir
+                if (confirm('Tem certeza que deseja excluir este produto?')) {
+                    // Encontra a linha (tr) mais próxima do botão clicado e a remove da tabela
+                    event.target.closest('tr').remove();
+                }
+            } else if (event.target.classList.contains('btn-editar')) { // Verifica se o elemento clicado tem a classe 'btn-editar'
+                // Alerta que a funcionalidade de edição não está completa no frontend puro
+                alert('Funcionalidade de edição ainda não implementada.');
+                
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+/* Estilos gerais para a página */
+body {
+    font-family: Arial, sans-serif; /* Define a fonte padrão */
+    background-color: #f0f2f5; /* Cor de fundo suave para a página */
+    margin: 0; /* Remove margens padrão do corpo */
+    padding: 20px; /* Adiciona espaçamento interno ao corpo */
+    display: flex; /* Usa flexbox para centralizar o container */
+    justify-content: center; /* Centraliza horizontalmente o conteúdo */
+    align-items: flex-start; /* Alinha o conteúdo ao topo verticalmente */
+    min-height: 100vh; /* Garante que o corpo ocupe pelo menos a altura total da viewport */
+}
+
+/* Estilos para o container principal que envolve todo o conteúdo */
+.container {
+    background-color: #ffffff; 
+    padding: 30px; /* Espaçamento interno */
+    border-radius: 8px; /* Cantos arredondados */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Ocupa toda a largura disponível */
+    max-width: 900px; /* Largura máxima para o container */
+    box-sizing: border-box; /* Garante que padding e border sejam incluídos na largura/altura */
+}
+
+/* Estilos para títulos h1 e h2 */
+h1, h2 {
+    color: #333; /* Cor do texto */
+    text-align: center; /* Centraliza o texto */
+    margin-bottom: 25px; /* Margem inferior */
+    font-weight: 600; /* Peso da fonte */
+}
+
+/* Margem inferior para seções específicas (formulário e tabela) */
+.form-section, .table-section {
+    margin-bottom: 30px;
+}
+
+/* Estilos para grupos de formulário.*/
+.form-group {
+    margin-bottom: 15px; /* Espaçamento entre os grupos */
+}
+
+/* Estilos para os rótulos (labels) dos campos */
+.form-group label {
+    display: block; /* Faz o label ocupar a largura total e o input ir para a linha de baixo */
+    margin-bottom: 8px; /* Espaçamento abaixo do label */
+    color: #555; /* Cor do texto */
+    font-weight: bold; /* Negrito */
+}
+
+/* Estilos para campos de input de texto, número e textarea */
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group textarea {
+    width: calc(100% - 20px); /* Largura total menos o padding lateral */
+    padding: 10px; /* Espaçamento interno */
+    border: 1px solid #ddd; /* Borda fina e cinza */
+    border-radius: 4px; /* Cantos arredondados */
+    font-size: 16px; /* Tamanho da fonte */
+    box-sizing: border-box; /* Inclui padding e border na largura total */
+}
+
+/* Estilos específicos para o textarea */
+.form-group textarea {
+    resize: vertical; 
+    min-height: 80px; /* Altura mínima */
+}
+
+/* Estilos para o botão de cadastrar */
+.btn-cadastrar {
+    background-color: #28a745; /* Cor de fundo*/
+    color: white; /* Cor do texto */
+    padding: 12px 25px; /* Espaçamento interno */
+    border: none; /* Sem borda */
+    border-radius: 4px; /* Cantos arredondados */
+    cursor: pointer; /* Muda o cursor para "mãozinha" ao passar por cima */
+    font-size: 18px; /* Tamanho da fonte */
+    width: 100%; /* Ocupa a largura total */
+    display: block; /* Faz o botão ocupar a largura total */
+    box-sizing: border-box; /* Inclui padding e border na largura total */
+    transition: background-color 0.3s ease; /* Transição na cor de fundo ao passar o mouse */
+}
+
+.btn-cadastrar:hover {
+    background-color: #218838; /* Escurece o verde ao passar o mouse */
+}
+
+/* Estilos gerais para a tabela */
+table {
+    width: 100%; /* Ocupa a largura total do container */
+    border-collapse: collapse; /* Remove o espaçamento entre as bordas das células */
+    margin-top: 20px; /* Margem superior */
+}
+
+/* Estilos para as células do cabeçalho e do corpo da tabela */
+table th, table td {
+    border: 1px solid #e0e0e0; /* Borda fina e clara para as células */
+    padding: 12px 15px; /* Espaçamento interno */
+    text-align: left; /* Alinhamento do texto à esquerda */
+    font-size: 15px; /* Tamanho da fonte */
+}
+
+/* Estilos específicos para as células do cabeçalho da tabela */
+table thead th {
+    background-color: #007bff; 
+    color: white; /* Cor do texto */
+    font-weight: bold; /* Negrito */
+    text-transform: uppercase; /* Texto em maiúsculas */
+}
+
+/* Estilos para linhas pares da tabela */
+table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Estilos para a linha da tabela ao passar o mouse */
+table tbody tr:hover {
+    background-color: #f1f1f1; /* Fundo mais claro ao passar o mouse */
+}
+
+/* Estilos gerais para os botões de ação (editar/excluir) */
+.btn-acao {
+    padding: 8px 12px; /* Espaçamento interno */
+    border: none; /* Sem borda */
+    border-radius: 4px; /* Cantos arredondados */
+    cursor: pointer; /* Muda o cursor para mãozinha */
+    font-size: 14px; /* Tamanho da fonte */
+    margin-right: 5px; /* Espaçamento à direita entre os botões */
+    transition: background-color 0.3s ease; /* Transição suave na cor de fundo */
+}
+
+/* Estilos para o botão de editar */
+.btn-editar {
+    background-color: #ffc107; /* Cor de fundo amarela */
+    color: #333; /* Cor do texto */
+}
+
+.btn-editar:hover {
+    background-color: #e0a800; /* Escurece o amarelo ao passar o mouse */
+}
+
+/* Estilos para o botão de excluir */
+.btn-excluir {
+    background-color: #dc3545; /* Cor de fundo vermelha */
+    color: white; /* Cor do texto */
+}
+
+.btn-excluir:hover {
+    background-color: #c82333; /* Escurece o vermelho ao passar o mouse */
+}
