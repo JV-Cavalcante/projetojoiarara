@@ -1,0 +1,63 @@
+/* Paleta Joia Rara: dourado suave, nude, branco, preto leve */
+.pagamento-container {
+  max-width: 500px;
+  margin: 60px auto;
+  padding: 40px;
+  background-color: #fffaf7;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(220, 200, 180, 0.2);
+  font-family: 'Poppins', sans-serif;
+  color: #3a3a3a;
+}
+
+.pagamento-container h2 {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  color: #b68d40; /* dourado suave */
+  margin-bottom: 30px;
+}
+
+.pagamento-form label {
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #4a4a4a;
+}
+
+.pagamento-form input,
+.pagamento-form select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d6c9b8;
+  border-radius: 8px;
+  background-color: #fff;
+  font-size: 14px;
+  transition: border 0.3s ease;
+}
+
+.pagamento-form input:focus,
+.pagamento-form select:focus {
+  border-color: #b68d40;
+  outline: none;
+}
+
+.pagamento-btn-gold {
+  display: block;
+  width: 100%;
+  margin-top: 30px;
+  padding: 14px;
+  background-color: #b68d40;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.pagamento-btn-gold:hover {
+  background-color: #a27d36;
+}

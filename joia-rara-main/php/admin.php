@@ -1,4 +1,5 @@
 <?php 
+    session_start();
     require 'conex.php';
 ?>
 
@@ -9,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Usuários</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
   </head>
   <body>
     <?php include('admnav.php');?>
@@ -42,15 +44,15 @@
                                 
                                 ?>
                                 <tr>
-                                    <td><?=$usuario['id_user'] ?></td>
+                                    <td><?=$usuario['id_usuario'] ?></td>
                                     <td><?=$usuario['nome'] ?></td>
                                     <td><?=$usuario['email'] ?></td>
                                     <td><?=$usuario['data_nasc'] ?></td>
                                     <td>
-                                        <a href="" class="btn btn-secondary btn-sm">Visualizar</a>
-                                        <a href="" class="btn btn-success btn-sm">Editar</a>
-                                        <form action="" method="POST" class="d-inline">
-                                            <button type="submit" name="delete-usuario" value="1" class="btn btn-danger btn-sm">
+                                        <a href="admview.php?id=<?=$usuario['id_usuario']?>" class="btn btn-secondary btn-sm"><span class="bi-eye-fill"></span>&nbsp;Visualizar</a>
+                                        <a href="edit.php?id=<?=$usuario['id_usuario']?>" class="btn btn-success btn-sm"><span class="bi-pencil-fill"></span>&nbsp;Editar</a>
+                                        <form action="acoes.php" method="POST" class="d-inline">
+                                            <button onclick="return confirm('Excluir usuário?')" type="submit" name="delete-usuario" value="<?=$usuario['id_usuario']?>" class="btn btn-danger btn-sm"><span class="bi-trash3-fill"></span>&nbsp;
                                                 Excluir
                                             </button>
                                         </form>

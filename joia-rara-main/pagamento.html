@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Pagamento - Joia Rara</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins&display=swap" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet" />
+   <link rel="stylesheet" href="css/pagamento.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <link href="css/style.css" rel="stylesheet" />
+  <link href="css/responsive.css" rel="stylesheet" />
+  <link href="css/login.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>   
+
+
+<body>
+
+<body>
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <nav class="navbar navbar-expand-lg custom_nav-container ">
+        <a class="navbar-brand" href="index.html">
+          <span>
+            JOIA RARA
+          </span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class=""></span>
+        </button>
+
+        <div class="collapse navbar-collapse innerpage_navbar" id="navbarSupportedContent">
+          <ul class="navbar-nav  ">
+            <li class="nav-item ">
+              <a class="nav-link" href="inicio-login.html">HOME <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="shop-login.html">
+                PRODUTOS
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="why-login.html">
+                SOBRE NÓS
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="testimonial-login.html">
+                FEEDBACKS
+              </a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="contact-login.html" >CONTATO</a>
+            </li>
+                        </li>
+                        <li class="nav-item">
+              <a class="nav-link" href="perfil.html">BEM VINDO JOÃO</a>
+                        </li>
+          </ul>
+          <div class="user_option">
+            <a href="login.html">  <!-- Link para a página de login -->
+              <span>
+              </span>
+            </a>
+              <i class="fa fa-shopping-bag"></i>
+              <a href="cart-login.html">  <!-- Link para a página do carrinho -->
+              <span id="cart-counter" class="cart-counter">0</span>
+            </a>
+            <div class="search-container">
+           <button class="search-btn" id="searchToggle" aria-label="Abrir pesquisa">
+          <i class="fa fa-search" aria-hidden="true"></i>
+        </button>
+        <div class="search-box" id="searchBox">
+         <input type="text" placeholder="Pesquisar produtos..." class="search-input">
+          <button class="search-submit" aria-label="Pesquisar">
+            <i class="fa fa-search" aria-hidden="true"></i>
+           </button>
+         </div>
+         </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+
+
+
+  <div class="pagamento-container">
+  <h2>Formas de Pagamento</h2>
+  
+  <form id="paymentForm" class="pagamento-form">
+    <label for="nome">Nome no Cartão</label>
+    <input type="text" id="nome" required>
+
+    <label for="numero">Número do Cartão</label>
+    <input type="text" id="numero" maxlength="16" required>
+
+    <label for="validade">Validade</label>
+    <input type="text" id="validade" placeholder="MM/AA" required>
+
+    <label for="cvv">CVV</label>
+    <input type="text" id="cvv" maxlength="4" required>
+
+    <label for="metodo">Método de Pagamento</label>
+    <select id="metodo" required>
+      <option value="">Selecione</option>
+      <option value="credito">Cartão de Crédito</option>
+      <option value="debito">Cartão de Débito</option>
+      <option value="pix">PIX</option>
+      <option value="boleto">Boleto</option>
+    </select>
+
+    <button type="submit" class="pagamento-btn-gold">Finalizar Pedido</button>
+  </form>
+</div>
+  <script>
+    document.getElementById('paymentForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      // Aqui você poderia validar mais campos, enviar para servidor, etc.
+      alert('Compra realizada com sucesso!');
+      window.location.href = "inicio-login.html"; // Ou página de agradecimento
+    });
+  </script>
+
+</body>
+</html>

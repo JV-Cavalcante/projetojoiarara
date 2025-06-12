@@ -1,0 +1,65 @@
+/* Estilo exclusivo para a página de perfil do usuário - Joia Rara */
+.perfil-container {
+  max-width: 900px;
+  margin: 80px auto;
+  padding: 30px;
+  background-color: #fffaf7;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(215, 190, 170, 0.25);
+  font-family: 'Poppins', sans-serif;
+}
+
+.perfil-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+  padding: 20px;
+  border: 1px solid #f0e4d8;
+  border-radius: 16px;
+  background: #ffffff;
+}
+
+.perfil-image img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 4px solid #b68d40; /* Dourado elegante */
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.perfil-info {
+  flex: 1;
+}
+
+.perfil-info h1 {
+  margin-bottom: 10px;
+  font-size: 28px;
+  color: #b68d40;
+  font-family: 'Playfair Display', serif;
+}
+
+.perfil-info p {
+  font-size: 16px;
+  color: #444;
+  margin: 6px 0;
+  line-height: 1.6;
+}
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+  .perfil-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .perfil-info h1 {
+    font-size: 24px;
+  }
+
+  .perfil-info p {
+    font-size: 15px;
+  }
+}

@@ -66,3 +66,4 @@ document.addEventListener('DOMContentLoaded', function() {
   // Link do carrinho no menu
   document.querySelector('.fa-shopping-bag').closest('a').href = 'cart/index.html';
 });
+

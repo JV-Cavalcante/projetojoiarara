@@ -1,4 +1,7 @@
 <?php
+    session_start();
+
+    
 // Teste para verificar se há erros 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -16,16 +19,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (!empty($_POST['email']) && !empty($_POST['password'])) {
 
             $email = $_POST['email'];
-            $password = $_POST['password'];
+            $password = trim($_POST['password']);
 
             echo 'Email: ' . $email . '<br>';
             echo 'Senha: ' . $password . '<br>';
 
             
-            $email_seguro = $conexao->real_escape_string($email);
-            $password_seguro = $conexao->real_escape_string($password);
+            //$email_seguro = $conexao->real_escape_string($email);
+            //$password_seguro = $conexao->real_escape_string($password);
 
-            $sql = "SELECT * FROM usuario WHERE email = '$email_seguro' AND senha = '$password_seguro'";
+            $sql = "SELECT * FROM usuario WHERE email = '$email' AND senha = '$password'";
 
             $resultado = $conexao->query($sql);
 
@@ -33,7 +36,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 // Credenciais corretas
                 echo "<script>alert('Sucesso! O registro email e Senha existe no BD');</script>";
                 // Redireciona para a página de sucesso
-                header("Location: http://localhost/joia-rara-main/index.html");
+                $_SESSION['email'] = $email;
+                $_SESSION['senha'] = $senha;
+                header("Location: http://localhost/joia-rara-main/inicio-login.html ");
             } else {
                 // Nenhuma correspondência encontrada (e-mail ou senha incorretos)
                 echo "<script>alert('E-mail ou Senha incorretos! Tente Novamente.');</script>";
@@ -51,7 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     } else { // Este 'else' trata quando a página é acessada diretamente via GET
-        echo "<script>alert('Acesso inválido. Por favor, use o formulário de login.');</script>";
+        //echo "<script>alert('Acesso inválido. Por favor, use o formulário de login.');</script>";
         echo "<script>window.location.href='http://localhost/joia-rara-main/login.html';</script>"; // Redireciona de volta
     }
 
